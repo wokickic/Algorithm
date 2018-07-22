@@ -26,10 +26,10 @@ void dfs(int y, int x, int h) {
 int main(void) {
 	cin >> n;
 	map = vector<vector<int>>(n, vector<int>(n, 0));
-	vector<bool> heightCheck(NSIZE, false);
+	vector<bool> heightCheck(NSIZE, false); 
 	queue<int> height;
 
-	// create map
+	// create map 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			cin >> map[i][j];

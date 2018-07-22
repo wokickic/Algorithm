@@ -19,4 +19,4 @@ int main(void) {
 	printf("%d\n", LCS[s1.size()][s2.size()]);
 }
 
-/*참고 : http://mygumi.tistory.com/126 */
+/* 참고 : http://mygumi.tistory.com/126 */
