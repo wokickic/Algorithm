@@ -49,16 +49,16 @@ public:
 		for (int year = 1;;year++){
 			int sanCnt = 0;
 			vector<vector<int>> check(n, vector<int>(m, 0));
-			meltingSan();
+			meltingSan(); //녹이고 반영하는 함수
 			for (int y = 0; y < n; y++){
 				for (int x = 0; x < m; x++){
 					if (map[y][x] > 0 && !check[y][x]) { dfs(y, x, check); sanCnt++; }
-					if (sanCnt == 2) return year;
+					if (sanCnt == 2) return year; //두덩이로 분리되면 종료
 				}
 			}
 			if (sanCnt == 0) return sanCnt;
 		}
-		return -1;
+		return -1; // 분리 안되는 경우 -1리턴
 	}
 };
 
