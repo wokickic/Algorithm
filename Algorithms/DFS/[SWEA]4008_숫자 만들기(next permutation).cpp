@@ -34,11 +34,15 @@ int main(void) {
 
 		for (int i = 0; i < n; i++) cin >> num[i];
 		int size = op.size();
+		
+		// next_permutation을 사용하기위해서는 정렬상태여야함
 		sort(op.begin(), op.end());
 
 		int max = MIN;
 		int min = MAX;
 
+		// next_permutation은 do-while()문에서 사용
+		// 순열을 만들어서 반환해줌
 		do {
 			int total = num[0];
 			for (int k = 0; k < size; k++) {
