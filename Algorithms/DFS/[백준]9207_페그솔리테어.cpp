@@ -21,18 +21,20 @@ void dfs(int y, int x, int pinNum, int depth) {
 	for (int i = 0; i < 4; i++) {
 		int ny = y + dy[i];
 		int nx = x + dx[i];
+		// 다음칸 범위체크
 		if (ny >= 0 && ny < row && nx >= 0 && nx < col) {
 			// 'o'가 아니면 다음반복
 			if (map[ny][nx] != 'o') continue;
 			// 'o'면 그다음칸 빈칸인지 체크하고 이동
 			int nny = ny + dy[i];
 			int nnx = nx + dx[i];
+			// 다다음칸 범위체크
 			if (nny >= 0 && nny < row && nnx >= 0 && nnx < col) {
 				if (map[nny][nnx] == '.') {
 					//이동
 					map[y][x] = map[ny][nx] = '.';
 					map[nny][nnx] = 'o';
-
+					// 0, 0부터 탐색을 해줘야한다.
 					for (int i = 0; i < row; i++)
 						for (int j = 0; j < col; j++)
 							if (map[i][j] == 'o')
