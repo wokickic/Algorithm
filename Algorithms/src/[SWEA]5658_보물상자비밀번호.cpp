@@ -13,9 +13,10 @@ int main(void) {
 		int rotate = n / 4;
 		string s;
 		cin >> s;
-		
-		for (int i = 0; i < n; i++) {
+		printf("%c\n", &s);
+		cout << s << "\n";
+		/*for (int i = 0; i < n; i++) {
 			
-		}
+		}*/
 	}
 }
