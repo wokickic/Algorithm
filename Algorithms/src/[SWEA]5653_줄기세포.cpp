@@ -3,11 +3,15 @@
 #include <queue>
 #define MID 500
 using namespace std;
-
+typedef struct cell {
+	int die, up, down;
+	int check[6];
+	cell() {}
+};
 int dy[] = { -1, 0, 1, 0 };
 int dx[] = { 0, 1, 0, -1 };
 int n, m, k;
-int map[1000][1000];
+cell map[1000][1000];
 queue<pair<int, int>> q;
 
 
@@ -18,8 +22,11 @@ int main(void) {
 
 		for (int i = 0; i < n; i++)
 			for (int j = 0; j < m; j++) {
-				cin >> map[MID + i][MID + j];
-				if (map[MID + i][MID + j] = !0) q.push({ MID + i, MID + j });
+				int in; cin >> in;
+				if (in != 0) {
+					map[i][j].down = in;
+					q.push({ i, j });
+				}
 			}
 
 		while (k--) {
