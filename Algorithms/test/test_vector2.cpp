@@ -22,7 +22,7 @@ vector<vector<int> > dfs(int dir, int cnt, vector<vector<int> >& mmap) {
 	vector<vector<int> > copymap = mmap;
 	mmap[0][0] = 5;
 	//printf("copymap address : %d\n", copymap);
-	cout << "copymap address : " << copymap << "\n";
+	cout << "copymap address : " <<  &copymap << "\n";
 	return copymap;
 }
 
@@ -33,8 +33,8 @@ int main(int arg, char** argc) {
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < n; j++)
 			cin >> map[i][j];
-	//printf("map address : %d\n", map);
+	printf("map address : %d\n", map);
 
 	vector<vector<int> > retmap = dfs(0, 0, map);
-	//printf("retmap address : %d\n", retmap);
+	printf("retmap address : %d\n", retmap);
 }
