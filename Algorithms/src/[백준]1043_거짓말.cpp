@@ -27,7 +27,7 @@ int main(void) {
 	for (int i = 0; i < true_num; i++) {
 		int tmp; cin >> tmp;
 		person[tmp] = 1;
-	}
+	}  
 
 	for (int i = 0; i < m; i++) {
 		int tmp; cin >> tmp;
