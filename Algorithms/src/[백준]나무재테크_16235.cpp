@@ -1,32 +1,42 @@
-#include <stdio.h>
-#include <string.h>
-#include "test.h"
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <queue>
+using namespace std;
 
+int dy[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
+int dx[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
+
+
+typedef struct TREE {
+	int y;
+	int x;
+	int age;
+};
+
+vector<vector<int>> init_map, map;
+struct compare {
+	bool operator()(TREE& a, TREE& b) {
+		return a.age < b.age;
+	}
+};
 
 int main(void) {
-	TEST t;
-	printf("%d %d\n", t.a, t.b);
-}
+	int n, m, k;
+	priority_queue<TREE, vector<TREE>, compare> pq[2];
+	scanf("%d %d %d",&n, &m, &k);
 
-//int main(void) {
-//	char a[] = { "1234@naver.com;23423@nate.com;234234@daum.net" };
-//	char *p;
-//	char *b[100];
-//	char tmp[1000];
-//
-//	strcpy(tmp, a);
-//	p = strtok(tmp, ";");
-//
-//	
-//	int i = 0;
-//	while (p != NULL) {
-//		b[i++] = p;
-//		p = strtok(NULL, ";");
-//	}
-//
-//	printf("a : %s\n", a);
-//	puts(tmp);
-//	for (int idx = 0; idx < i; idx++) {
-//		printf("b[idx] : %s\n", b[idx]);
-//	}
-//}
+	map = init_map = vector<vector<int>>(n, vector<int>(n));
+	
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			int t;
+			scanf("%d", &t);
+			map[i][j] = init_map[i][j] = t;
+		}
+	}
+
+	for (int i = 0; i < m; i++) {
+
+	}
+}
